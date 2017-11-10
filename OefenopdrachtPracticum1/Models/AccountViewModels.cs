@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace OefenopdrachtPracticum1.Models
 {
-    //
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
