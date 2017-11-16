@@ -79,6 +79,21 @@ namespace OefenopdrachtPracticum1.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Klantnummer")]
+        public int CustomerNumber { get; set; }
+
+        [Required]
+        [Display(Name = "Voornaam")]
+        public string Firstname { get; set; }
+
+        [Display(Name = "Tussenvoegsel")]
+        public string Prefix { get; set; }
+
+        [Required]
+        [Display(Name = "Achternaam")]
+        public string Surname { get; set; }
     }
 
     public class ResetPasswordViewModel

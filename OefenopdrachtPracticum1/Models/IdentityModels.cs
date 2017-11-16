@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.ComponentModel.DataAnnotations;
 
 namespace OefenopdrachtPracticum1.Models
 {
@@ -16,6 +17,21 @@ namespace OefenopdrachtPracticum1.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        [Required]
+        [Display(Name = "Klantnummer")]
+        public int CustomerNumber { get; set; }
+
+        [Required]
+        [Display(Name = "Voornaam")]
+        public string Firstname { get; set; }
+        
+        [Display(Name = "Tussenvoegsel")]
+        public string Prefix { get; set; }
+
+        [Required]
+        [Display(Name = "Achternaam")]
+        public string Surname { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -29,5 +45,7 @@ namespace OefenopdrachtPracticum1.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<OefenopdrachtPracticum1.Models.Ticket> Tickets { get; set; }
     }
 }
